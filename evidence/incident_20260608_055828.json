@@ -1,0 +1,11 @@
+[
+    {
+        "type": "BRUTE_FORCE",
+        "user": "admin",
+        "attempts": 5,
+        "severity": "MEDIUM",
+        "mitre_id": "T1110",
+        "technique": "Brute Force",
+        "tactic": "Credential Access"
+    }
+]

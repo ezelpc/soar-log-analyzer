@@ -1,0 +1,11 @@
+pytest
+ruff
+black
+isort
+mypy
+bandit
+semgrep
+detect-secrets
+pip-audit
+safety
+python-dotenv

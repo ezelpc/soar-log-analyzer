@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/
+
+# Environment
+.env
+
+# Cache
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Reports
+reports/*.txt
+
+# Alerts
+alerts/*.json
+
+# Logs
+*.log
