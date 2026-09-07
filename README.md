@@ -1,59 +1,82 @@
 # SOAR Log Analyzer
 
-## Descripción General
+> **Security Operations Automation · Blue Team · MITRE ATT&CK · Incident Response**
 
-SOAR Log Analyzer es un proyecto de automatización en ciberseguridad diseñado para detectar ataques de fuerza bruta a partir de registros de autenticación.
+SOAR Log Analyzer is a defensive security automation project that turns authentication logs into structured detections, evidence and incident reports. It demonstrates a practical SOC workflow: **ingest → detect → classify → enrich → preserve evidence → notify**.
 
-El proyecto simula parte del flujo de trabajo de un Centro de Operaciones de Seguridad (SOC) mediante la automatización de las siguientes tareas:
+## 🎯 Portfolio objective
 
-* Análisis de registros de autenticación
-* Detección de actividades sospechosas
-* Mapeo de detecciones con MITRE ATT&CK
-* Clasificación de niveles de severidad
-* Generación de evidencias en formato JSON
-* Creación de reportes de incidentes en HTML
-* Envío de notificaciones a través de Telegram y Discord
+Build a lightweight, reproducible security-operations pipeline for detecting authentication attacks such as brute-force activity and converting raw log data into actionable incident evidence.
 
-## Características
+## 🔐 Detection workflow
 
-* Detección de ataques de fuerza bruta
-* Mapeo con MITRE ATT&CK (T1110)
-* Clasificación de severidad
-* Generación de alertas en formato JSON
-* Recolección de evidencias de incidentes
-* Generación de reportes HTML
-* Notificaciones mediante Telegram
-* Notificaciones mediante Discord
+```text
+Authentication logs
+        ↓
+Parser / detection rules
+        ↓
+Suspicious activity
+        ↓
+MITRE ATT&CK mapping
+        ↓
+Severity classification
+        ↓
+JSON alert + evidence
+        ↓
+HTML incident report
+        ↓
+Telegram / Discord notification
+```
 
-## Tecnologías Utilizadas
+## 🛡️ Security capabilities
 
-* Python
-* Docker
-* Dev Containers
-* Git
-* GitHub
-* MITRE ATT&CK
-* API de Telegram
-* Webhooks de Discord
+| Capability | Implementation |
+|---|---|
+| Detection | Brute-force authentication patterns |
+| Threat mapping | MITRE ATT&CK T1110 |
+| Triage | Severity classification |
+| Evidence | Structured JSON artifacts |
+| Reporting | HTML incident reports |
+| Notification | Telegram + Discord webhooks |
+| Reproducibility | Docker / Dev Containers |
 
-## Estructura del Proyecto
+## 🧰 Technology stack
 
-src/
-logs/
-alerts/
-reports/
-evidence/
+- **Language:** Python
+- **Security:** MITRE ATT&CK
+- **Runtime:** Docker, Dev Containers
+- **Automation:** GitHub
+- **Integrations:** Telegram API, Discord webhooks
 
-## Hoja de Ruta
+## 📁 Project structure
 
-* Panel de control con FastAPI
-* Integración con TheHive
-* Integración con Wazuh
-* Gestión de IOC (Indicadores de Compromiso)
-* Integración de fuentes de Inteligencia de Amenazas
-* Acciones automatizadas de respuesta ante incidentes
+```text
+src/        # detection and automation logic
+logs/       # sample authentication logs
+alerts/     # generated alert artifacts
+reports/    # incident reports
+evidence/   # investigation evidence
+```
 
-## Autor
+## 🚀 Roadmap
 
-Ezequiel Perez
-Ciberseguridad | Blue Team | SOC | DFIR
+- [ ] FastAPI investigation API
+- [ ] TheHive integration
+- [ ] Wazuh integration
+- [ ] IOC management
+- [ ] Threat-intelligence enrichment
+- [ ] Automated response playbooks
+- [ ] Detection test dataset and regression tests
+- [ ] MITRE ATT&CK coverage matrix
+- [ ] Containerized CI security checks
+
+## 💼 Why this belongs in a DevSecOps + Cybersecurity portfolio
+
+This project complements infrastructure-focused work by demonstrating the **security operations side of the lifecycle**: detection engineering, evidence handling, incident reporting and response automation.
+
+It is intentionally defensive and designed for controlled lab data.
+
+## 👤 Author
+
+**Ezequiel Perez**  
+DevSecOps · Cloud Security · Cybersecurity · Blue Team / SOC
