@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trivy filesystem scan
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           scan-type: fs
           scan-ref: .
@@ -36,15 +36,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python -m pip install --disable-pip-version-check --no-cache-dir pip-audit
           if [ -f requirements.txt ]; then
-            python -m pip install --upgrade pip
-            pip install pip-audit
             pip-audit -r requirements.txt
+          elif [ -f pyproject.toml ]; then
+            pip-audit --skip-editable
           else
-            echo 'No requirements.txt found; dependency audit skipped.'
+            echo 'No Python dependency manifest found; audit skipped.'
           fi
 
       - name: Python syntax validation
         shell: bash
         run: |
+          set -euo pipefail
           python -m compileall -q .
